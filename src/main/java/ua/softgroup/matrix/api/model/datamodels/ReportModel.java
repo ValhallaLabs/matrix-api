@@ -3,7 +3,6 @@ package ua.softgroup.matrix.api.model.datamodels;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Arrays;
 
 public class ReportModel implements Serializable, DataModel {
     private static final long serialVersionUID = 1L;
@@ -12,23 +11,31 @@ public class ReportModel implements Serializable, DataModel {
 
     private String text;
 
-    private long projectId; //TODO for removing
-
     private boolean checked;
 
-    private LocalDate date; //TODO think about this
+    private LocalDate date;
 
     private int workTime;
+
+    private int rate;
+
+    private double coefficient;
+
+    private String currency;
 
     private byte[] attachment;
 
     public ReportModel() {
     }
 
-    public ReportModel(long id, String text, long projectId, boolean checked, LocalDate date, int workTime) {
+    public ReportModel(Long id, String text) {
         this.id = id;
         this.text = text;
-        this.projectId = projectId;
+    }
+
+    public ReportModel(long id, String text, boolean checked, LocalDate date, int workTime) {
+        this.id = id;
+        this.text = text;
         this.checked = checked;
         this.date = date;
         this.workTime = workTime;
@@ -38,12 +45,6 @@ public class ReportModel implements Serializable, DataModel {
         this.text = text;
         this.date = now;
         this.attachment = attachment;
-    }
-
-    public ReportModel(Long currentReportId, String text, Long currentProjectId) {
-        this.id = currentReportId;
-        this.text = text;
-        this.projectId = currentProjectId;
     }
 
     public long getId() {
@@ -60,14 +61,6 @@ public class ReportModel implements Serializable, DataModel {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public long getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(long projectId) {
-        this.projectId = projectId;
     }
 
     public boolean isChecked() {
@@ -94,6 +87,30 @@ public class ReportModel implements Serializable, DataModel {
         this.workTime = workTime;
     }
 
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
+
+    public double getCoefficient() {
+        return coefficient;
+    }
+
+    public void setCoefficient(double coefficient) {
+        this.coefficient = coefficient;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
     public byte[] getAttachment() {
         return attachment;
     }
@@ -107,11 +124,12 @@ public class ReportModel implements Serializable, DataModel {
         return "ReportModel{" +
                 "id=" + id +
                 ", text='" + text + '\'' +
-                ", projectId=" + projectId +
                 ", checked=" + checked +
                 ", date=" + date +
                 ", workTime=" + workTime +
-                ", attachment=" + Arrays.toString(attachment) +
+                ", rate=" + rate +
+                ", coefficient=" + coefficient +
+                ", currency='" + currency + '\'' +
                 '}';
     }
 }

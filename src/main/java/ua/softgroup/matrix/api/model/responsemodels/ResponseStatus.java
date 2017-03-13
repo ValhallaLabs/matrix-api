@@ -7,7 +7,6 @@ public enum ResponseStatus {
     SUCCESS,
     FAIL,
     INVALID_CREDENTIALS,
-    REPORT_EXISTS,
     INVALID_TOKEN,
     REPORT_EXPIRED;
 }
