@@ -17,17 +17,17 @@ public class InitializeModel implements Serializable, DataModel {
 
     private int screenshotFrequency;
 
-    private int checkPointFrequency;
+    private int checkPointPeriod;
 
     public InitializeModel() {
     }
 
-    public InitializeModel(String token, Set<ProjectModel> projectModels, int idlePeriod, int screenshotFrequency, int checkPointFrequency) {
+    public InitializeModel(String token, Set<ProjectModel> projectModels, int idlePeriod, int screenshotFrequency, int checkPointPeriod) {
         this.token = token;
         this.projectModels = projectModels;
         this.idlePeriod = idlePeriod;
         this.screenshotFrequency = screenshotFrequency;
-        this.checkPointFrequency = checkPointFrequency;
+        this.checkPointPeriod = checkPointPeriod;
     }
 
     public String getToken() {
@@ -62,12 +62,12 @@ public class InitializeModel implements Serializable, DataModel {
         this.screenshotFrequency = screenshotFrequency;
     }
 
-    public int getCheckPointFrequency() {
-        return checkPointFrequency;
+    public int getCheckPointPeriod() {
+        return checkPointPeriod;
     }
 
-    public void setCheckPointFrequency(int checkPointFrequency) {
-        this.checkPointFrequency = checkPointFrequency;
+    public void setCheckPointPeriod(int checkPointPeriod) {
+        this.checkPointPeriod = checkPointPeriod;
     }
 
     @Override
@@ -77,7 +77,7 @@ public class InitializeModel implements Serializable, DataModel {
                 ", projectModels=" + projectModels +
                 ", idlePeriod=" + idlePeriod +
                 ", screenshotFrequency=" + screenshotFrequency +
-                ", checkPointFrequency=" + checkPointFrequency +
+                ", checkPointPeriod=" + checkPointPeriod +
                 '}';
     }
 }
