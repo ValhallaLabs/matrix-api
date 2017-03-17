@@ -61,4 +61,14 @@ public class TimeModel implements Serializable, DataModel {
     public void setIdlePercent(double idlePercent) {
         this.idlePercent = idlePercent;
     }
+
+    @Override
+    public String toString() {
+        return "TimeModel{" +
+                "totalTime=" + totalTime +
+                ", todayTime=" + todayTime +
+                ", todayStartTime=" + todayStartTime +
+                ", idlePercent=" + idlePercent +
+                '}';
+    }
 }
