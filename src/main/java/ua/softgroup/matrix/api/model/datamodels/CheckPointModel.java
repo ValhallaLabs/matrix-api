@@ -83,7 +83,6 @@ public class CheckPointModel implements Serializable, DataModel {
     public String toString() {
         return "CheckPointModel{" +
                 "order=" + order +
-                ", screenshot=" + Arrays.toString(screenshot) +
                 ", keyboardLogs='" + keyboardLogs + '\'' +
                 ", mouseFootage=" + mouseFootage +
                 ", windowsTimeMap=" + windowsTimeMap +
