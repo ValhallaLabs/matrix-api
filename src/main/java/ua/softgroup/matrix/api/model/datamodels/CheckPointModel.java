@@ -1,7 +1,7 @@
 package ua.softgroup.matrix.api.model.datamodels;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 /**
  * @author Vadim Boitsov <sg.vadimbojcov@gmail.com>
@@ -17,12 +17,12 @@ public class CheckPointModel implements Serializable, DataModel {
 
     private double mouseFootage;
 
-    private Set<ActiveWindowModel> activeWindows;
+    private List<ActiveWindowModel> activeWindows;
 
     private int idleTime;
 
     public CheckPointModel(long order, byte[] screenshot, String keyboardLogs,
-                           double mouseFootage, Set<ActiveWindowModel> activeWindows, int idleTime) {
+                           double mouseFootage, List<ActiveWindowModel> activeWindows, int idleTime) {
         this.order = order;
         this.screenshot = screenshot;
         this.keyboardLogs = keyboardLogs;
@@ -63,11 +63,11 @@ public class CheckPointModel implements Serializable, DataModel {
         this.mouseFootage = mouseFootage;
     }
 
-    public Set<ActiveWindowModel> getActiveWindows() {
+    public List<ActiveWindowModel> getActiveWindows() {
         return activeWindows;
     }
 
-    public void setActiveWindows(Set<ActiveWindowModel> activeWindows) {
+    public void setActiveWindows(List<ActiveWindowModel> activeWindows) {
         this.activeWindows = activeWindows;
     }
 
