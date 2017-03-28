@@ -1,8 +1,7 @@
 package ua.softgroup.matrix.api.model.datamodels;
 
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Vadim Boitsov <sg.vadimbojcov@gmail.com>
@@ -18,16 +17,17 @@ public class CheckPointModel implements Serializable, DataModel {
 
     private double mouseFootage;
 
-    private Map<String, Integer> windowsTimeMap;
+    private Set<ActiveWindowModel> activeWindows;
 
     private int idleTime;
 
-    public CheckPointModel(long order, byte[] screenshot, String keyboardLogs, double mouseFootage, Map<String, Integer> windowsTimeMap, int idleTime) {
+    public CheckPointModel(long order, byte[] screenshot, String keyboardLogs,
+                           double mouseFootage, Set<ActiveWindowModel> activeWindows, int idleTime) {
         this.order = order;
         this.screenshot = screenshot;
         this.keyboardLogs = keyboardLogs;
         this.mouseFootage = mouseFootage;
-        this.windowsTimeMap = windowsTimeMap;
+        this.activeWindows = activeWindows;
         this.idleTime = idleTime;
     }
 
@@ -63,12 +63,12 @@ public class CheckPointModel implements Serializable, DataModel {
         this.mouseFootage = mouseFootage;
     }
 
-    public Map<String, Integer> getWindowsTimeMap() {
-        return windowsTimeMap;
+    public Set<ActiveWindowModel> getActiveWindows() {
+        return activeWindows;
     }
 
-    public void setWindowsTimeMap(Map<String, Integer> windowsTimeMap) {
-        this.windowsTimeMap = windowsTimeMap;
+    public void setActiveWindows(Set<ActiveWindowModel> activeWindows) {
+        this.activeWindows = activeWindows;
     }
 
     public int getIdleTime() {
@@ -83,9 +83,10 @@ public class CheckPointModel implements Serializable, DataModel {
     public String toString() {
         return "CheckPointModel{" +
                 "order=" + order +
+                ", screenshot=" + (screenshot != null) +
                 ", keyboardLogs='" + keyboardLogs + '\'' +
                 ", mouseFootage=" + mouseFootage +
-                ", windowsTimeMap=" + windowsTimeMap +
+                ", activeWindows=" + activeWindows +
                 ", idleTime=" + idleTime +
                 '}';
     }
