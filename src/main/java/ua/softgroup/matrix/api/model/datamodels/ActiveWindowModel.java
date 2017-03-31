@@ -1,12 +1,13 @@
 package ua.softgroup.matrix.api.model.datamodels;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 /**
  * Created by vadimboitsov on 3/28/17.
  */
-public class ActiveWindowModel {
+public class ActiveWindowModel implements Serializable, DataModel {
     private static final long serialVersionUID = 1L;
 
     private String windowTitle;
