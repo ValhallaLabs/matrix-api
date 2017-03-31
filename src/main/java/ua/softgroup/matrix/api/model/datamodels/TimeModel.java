@@ -2,6 +2,7 @@ package ua.softgroup.matrix.api.model.datamodels;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 /**
  * @author Vadim Boitsov <sg.vadimbojcov@gmail.com>
@@ -13,7 +14,7 @@ public class TimeModel implements Serializable, DataModel {
 
     private int todayTime;
 
-    private LocalDateTime todayStartTime;
+    private LocalTime todayStartTime;
 
     private double idlePercent;
 
@@ -23,7 +24,7 @@ public class TimeModel implements Serializable, DataModel {
         this.idlePercent = idlePercent;
     }
 
-    public TimeModel(int totalTime, int todayTime, LocalDateTime todayStartTime, double idlePercent) {
+    public TimeModel(int totalTime, int todayTime, LocalTime todayStartTime, double idlePercent) {
         this.totalTime = totalTime;
         this.todayTime = todayTime;
         this.todayStartTime = todayStartTime;
@@ -46,11 +47,11 @@ public class TimeModel implements Serializable, DataModel {
         this.todayTime = todayTime;
     }
 
-    public LocalDateTime getTodayStartTime() {
+    public LocalTime getTodayStartTime() {
         return todayStartTime;
     }
 
-    public void setTodayStartTime(LocalDateTime todayStartTime) {
+    public void setTodayStartTime(LocalTime todayStartTime) {
         this.todayStartTime = todayStartTime;
     }
 

@@ -1,6 +1,7 @@
 package ua.softgroup.matrix.api.model.datamodels;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 /**
  * Created by vadimboitsov on 3/28/17.
@@ -10,11 +11,11 @@ public class ActiveWindowModel {
 
     private String windowTitle;
 
-    private LocalDateTime startTime;
+    private LocalTime startTime;
 
     private int workingPeriodSeconds;
 
-    public ActiveWindowModel(String windowTitle, LocalDateTime startTime, int workingPeriodSeconds) {
+    public ActiveWindowModel(String windowTitle, LocalTime startTime, int workingPeriodSeconds) {
         this.windowTitle = windowTitle;
         this.startTime = startTime;
         this.workingPeriodSeconds = workingPeriodSeconds;
@@ -28,11 +29,11 @@ public class ActiveWindowModel {
         this.windowTitle = windowTitle;
     }
 
-    public LocalDateTime getStartTime() {
+    public LocalTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalDateTime startTime) {
+    public void setStartTime(LocalTime startTime) {
         this.startTime = startTime;
     }
 
