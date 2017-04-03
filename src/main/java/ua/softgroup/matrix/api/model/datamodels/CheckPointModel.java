@@ -11,6 +11,8 @@ public class CheckPointModel implements Serializable, DataModel {
 
     private long order; // just an order of checkpoint
 
+    private String screenshotWindowTitle;
+
     private byte[] screenshot;
 
     private String keyboardLogs;
@@ -21,9 +23,10 @@ public class CheckPointModel implements Serializable, DataModel {
 
     private int idleTime;
 
-    public CheckPointModel(long order, byte[] screenshot, String keyboardLogs,
+    public CheckPointModel(long order, String screenshotWindowTitle, byte[] screenshot, String keyboardLogs,
                            double mouseFootage, List<ActiveWindowModel> activeWindows, int idleTime) {
         this.order = order;
+        this.screenshotWindowTitle = screenshotWindowTitle;
         this.screenshot = screenshot;
         this.keyboardLogs = keyboardLogs;
         this.mouseFootage = mouseFootage;
@@ -37,6 +40,14 @@ public class CheckPointModel implements Serializable, DataModel {
 
     public void setOrder(long order) {
         this.order = order;
+    }
+
+    public String getScreenshotWindowTitle() {
+        return screenshotWindowTitle;
+    }
+
+    public void setScreenshotWindowTitle(String screenshotWindowTitle) {
+        this.screenshotWindowTitle = screenshotWindowTitle;
     }
 
     public byte[] getScreenshot() {
@@ -83,7 +94,8 @@ public class CheckPointModel implements Serializable, DataModel {
     public String toString() {
         return "CheckPointModel{" +
                 "order=" + order +
-                ", screenshot=" + (screenshot != null) +
+                ", screenshotWindowTitle='" + screenshotWindowTitle + '\'' +
+                ", screenshot=" + (screenshot !=  null) +
                 ", keyboardLogs='" + keyboardLogs + '\'' +
                 ", mouseFootage=" + mouseFootage +
                 ", activeWindows=" + activeWindows +
