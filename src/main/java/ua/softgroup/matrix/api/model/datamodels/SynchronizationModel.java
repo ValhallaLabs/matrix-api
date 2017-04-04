@@ -11,14 +11,8 @@ public class SynchronizationModel implements Serializable, DataModel {
 
     private Set<CheckPointModel> checkPointModels;
 
-    private long idleTime;
-
-    public SynchronizationModel() {
-    }
-
     public SynchronizationModel(Set<CheckPointModel> checkPointModels, long idleTime) {
         this.checkPointModels = checkPointModels;
-        this.idleTime = idleTime;
     }
 
     public Set<CheckPointModel> getCheckPointModels() {
@@ -29,19 +23,10 @@ public class SynchronizationModel implements Serializable, DataModel {
         this.checkPointModels = checkPointModels;
     }
 
-    public long getIdleTime() {
-        return idleTime;
-    }
-
-    public void setIdleTime(long idleTime) {
-        this.idleTime = idleTime;
-    }
-
     @Override
     public String toString() {
         return "SynchronizationModel{" +
                 "checkPointModels=" + checkPointModels +
-                ", idleTime=" + idleTime +
                 '}';
     }
 }
