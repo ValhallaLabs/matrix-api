@@ -1,7 +1,7 @@
 package ua.softgroup.matrix.api.model.datamodels;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.LinkedHashSet;
 
 /**
  * @author Vadim Boitsov <sg.vadimbojcov@gmail.com>
@@ -9,17 +9,17 @@ import java.util.Set;
 public class SynchronizationModel implements Serializable, DataModel {
     private static final long serialVersionUID = 1L;
 
-    private Set<CheckPointModel> checkPointModels;
+    private LinkedHashSet<CheckPointModel> checkPointModels;
 
-    public SynchronizationModel(Set<CheckPointModel> checkPointModels, long idleTime) {
+    public SynchronizationModel(LinkedHashSet<CheckPointModel> checkPointModels) {
         this.checkPointModels = checkPointModels;
     }
 
-    public Set<CheckPointModel> getCheckPointModels() {
+    public LinkedHashSet<CheckPointModel> getCheckPointModels() {
         return checkPointModels;
     }
 
-    public void setCheckPointModels(Set<CheckPointModel> checkPointModels) {
+    public void setCheckPointModels(LinkedHashSet<CheckPointModel> checkPointModels) {
         this.checkPointModels = checkPointModels;
     }
 
