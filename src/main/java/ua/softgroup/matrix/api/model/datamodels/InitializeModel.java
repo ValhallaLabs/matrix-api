@@ -19,15 +19,23 @@ public class InitializeModel implements Serializable, DataModel {
 
     private int checkPointPeriod;
 
+    private String bhLink;
+
     public InitializeModel() {
     }
 
-    public InitializeModel(String token, Set<ProjectModel> projectModels, int idlePeriod, int screenshotFrequency, int checkPointPeriod) {
+    public InitializeModel(String token,
+                           Set<ProjectModel> projectModels,
+                           int idlePeriod,
+                           int screenshotFrequency,
+                           int checkPointPeriod,
+                           String bhLink) {
         this.token = token;
         this.projectModels = projectModels;
         this.idlePeriod = idlePeriod;
         this.screenshotFrequency = screenshotFrequency;
         this.checkPointPeriod = checkPointPeriod;
+        this.bhLink = bhLink;
     }
 
     public String getToken() {
