@@ -1,6 +1,7 @@
 package ua.softgroup.matrix.api.model.datamodels;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -19,7 +20,7 @@ public class InitializeModel implements Serializable, DataModel {
 
     private int checkPointPeriod;
 
-    private String bhLink;
+    private List<String> bhList;
 
     public InitializeModel() {
     }
@@ -29,13 +30,13 @@ public class InitializeModel implements Serializable, DataModel {
                            int idlePeriod,
                            int screenshotFrequency,
                            int checkPointPeriod,
-                           String bhLink) {
+                           List<String> bhSet) {
         this.token = token;
         this.projectModels = projectModels;
         this.idlePeriod = idlePeriod;
         this.screenshotFrequency = screenshotFrequency;
         this.checkPointPeriod = checkPointPeriod;
-        this.bhLink = bhLink;
+        this.bhList = bhList;
     }
 
     public String getToken() {
@@ -76,6 +77,14 @@ public class InitializeModel implements Serializable, DataModel {
 
     public void setCheckPointPeriod(int checkPointPeriod) {
         this.checkPointPeriod = checkPointPeriod;
+    }
+
+    public List<String> getBhSet() {
+        return bhList;
+    }
+
+    public void setBhSet(List<String> bhSet) {
+        this.bhList = bhSet;
     }
 
     @Override
