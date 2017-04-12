@@ -30,7 +30,7 @@ public class InitializeModel implements Serializable, DataModel {
                            int idlePeriod,
                            int screenshotFrequency,
                            int checkPointPeriod,
-                           List<String> bhSet) {
+                           List<String> bhList) {
         this.token = token;
         this.projectModels = projectModels;
         this.idlePeriod = idlePeriod;
