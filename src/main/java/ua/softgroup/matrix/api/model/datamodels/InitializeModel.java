@@ -79,12 +79,12 @@ public class InitializeModel implements Serializable, DataModel {
         this.checkPointPeriod = checkPointPeriod;
     }
 
-    public List<String> getBhSet() {
+    public List<String> getBhList() {
         return bhList;
     }
 
-    public void setBhSet(List<String> bhSet) {
-        this.bhList = bhSet;
+    public void setBhlist(List<String> bhList) {
+        this.bhList = bhList;
     }
 
     @Override
@@ -95,6 +95,7 @@ public class InitializeModel implements Serializable, DataModel {
                 ", idlePeriod=" + idlePeriod +
                 ", screenshotFrequency=" + screenshotFrequency +
                 ", checkPointPeriod=" + checkPointPeriod +
+                ", bhList=" + bhList +
                 '}';
     }
 }
