@@ -73,5 +73,10 @@ public enum ServerCommands {
     /**
      * That command close socket connection.
      */
-    CLOSE
+    CLOSE,
+
+    /**
+     * BH
+     */
+    BH;
 }
